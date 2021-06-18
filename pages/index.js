@@ -1,8 +1,13 @@
+import { LIGHT_COLORS } from '@/lib/constants'
+import { useIsFontReady } from '@/lib/useFontReady'
 import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
+import { RainbowHighlight } from '@/components/ui/rainbow'
+import { RoughNotation } from 'react-rough-notation'
+import { useState } from 'react'
 
 const MAX_DISPLAY = 5
 const postDateTemplate = { year: 'numeric', month: 'long', day: 'numeric' }
@@ -14,6 +19,10 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  // Before animation, detect if custom fonts are loaded, so <RoughNotation />
+  // SVG's are correctly positioned over the elements
+  const isFontReady = useIsFontReady()
+
   return (
     <>
       <PageSeo
@@ -26,8 +35,37 @@ export default function Home({ posts }) {
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+          <p className="text-xl leading-7 text-gray-500 dark:text-gray-400 mt-4">
+            A place for{' '}
+            <RoughNotation
+              type="underline"
+              show={true}
+              color="#fff176"
+              animationDelay={800}
+              animationDuration={1500}
+            >
+              thoughts,{' '}
+            </RoughNotation>
+            <RoughNotation
+              type="underline"
+              show={true}
+              color="#ADD8E6"
+              animationDelay={1400}
+              animationDuration={1500}
+            >
+              wanderings,{' '}
+            </RoughNotation>
+            &{' '}
+            <RoughNotation
+              type="underline"
+              show={true}
+              color="#FF0000"
+              animationDelay={1700}
+              animationDuration={1500}
+            >
+              everything{' '}
+            </RoughNotation>
+            in between
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -70,7 +108,7 @@ export default function Home({ posts }) {
                       <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+                          className="text-blue-500 dark:text-primaryColorDark hover:text-blue-600 dark:hover:text-yellow-300"
                           aria-label={`Read "${title}"`}
                         >
                           Read more &rarr;
@@ -88,7 +126,7 @@ export default function Home({ posts }) {
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
-            className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+            className="text-blue-500 dark:text-primaryColorDark hover:text-blue-600 dark:hover:text-yellow-300"
             aria-label="all posts"
           >
             All Posts &rarr;

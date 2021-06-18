@@ -1,48 +1,31 @@
-import Image from 'next/image'
-import Link from '@/components/Link'
+import SocialIcon from './social-icons'
+import FolderIcon from './icon'
 
-const Card = ({ title, description, imgSrc, href }) => (
+const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 }) => (
   <div className="p-4 md:w-1/2 md" style={{ maxWidth: '544px' }}>
     <div className="h-full border-2 border-gray-200 border-opacity-60 dark:border-gray-700 rounded-md overflow-hidden">
-      {href ? (
-        <Link href={href} aria-label={`Link to ${title}`}>
-          <Image
-            alt={title}
-            src={imgSrc}
-            className="lg:h-48 md:h-36 object-cover object-center"
-            width={544}
-            height={306}
-          />
-        </Link>
-      ) : (
-        <Image
-          alt={title}
-          src={imgSrc}
-          className="lg:h-48 md:h-36 object-cover object-center"
-          width={544}
-          height={306}
-        />
-      )}
       <div className="p-6">
-        <h2 className="text-2xl font-bold leading-8 tracking-tight mb-3">
-          {href ? (
-            <Link href={href} aria-label={`Link to ${title}`}>
-              {title}
-            </Link>
-          ) : (
-            title
-          )}
-        </h2>
+        <div className="flex flex-row justify-between items-center">
+          <div className="my-2">
+            <FolderIcon />
+          </div>
+          <div className="flex flex-row justify-between">
+            <div className="mx-1">
+              {href ? <SocialIcon kind="external" href={href} size="6" /> : null}
+            </div>
+            <div className="mx-1">
+              {github ? <SocialIcon kind="github" href={github} size="6" /> : null}
+            </div>
+          </div>
+        </div>
+        <h2 className="text-2xl font-bold leading-8 tracking-tight mb-3">{title}</h2>
+
         <p className="prose text-gray-500 max-w-none dark:text-gray-400 mb-3">{description}</p>
-        {href && (
-          <Link
-            href={href}
-            className="text-base font-medium leading-6 text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
-            aria-label={`Link to ${title}`}
-          >
-            Learn more &rarr;
-          </Link>
-        )}
+        <div className="flex flex-row justify-between">
+          <div className="text-gray-400 text-sm font-extralight">
+            {tech1} &#8226; {tech2} &#8226; {tech3}
+          </div>
+        </div>
       </div>
     </div>
   </div>
