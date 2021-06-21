@@ -1,10 +1,10 @@
 import siteMetadata from '@/data/siteMetadata'
-import SocialIcon from '@/components/social-icons'
+import Link from '@/components/Link'
 import Experience from '@/components/Experience'
 import { PageSeo } from '@/components/SEO'
 import experienceData from '@/data/experienceData'
 import { RoughNotation } from 'react-rough-notation'
-import { left, right } from 'trim'
+import Tilt from 'react-parallax-tilt'
 
 export default function About() {
   return (
@@ -23,21 +23,24 @@ export default function About() {
           </div>
           <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
             <div className="flex flex-col items-center pt-8 space-x-2">
-              <img src={siteMetadata.image} alt="avatar" className="w-48 h-48 rounded-full" />
-              {/* <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
-              {siteMetadata.author}
-            </h3>
-            <div className="text-gray-500 dark:text-gray-400">Software Developer</div>
-            <div className="text-gray-500 dark:text-gray-400">Reykjavík, Iceland</div> */}
+              <Tilt>
+                {/* <img src={siteMetadata.image} alt="avatar" className="w-48 h-48 rounded-full" /> */}
+                <img src={siteMetadata.image} alt="avatar" className="rounded-full w-48 h-48" />
+              </Tilt>
             </div>
-            <div className="pt-8 pb-8 max-w-none xl:col-span-2">
+            <div className="pt-8 pb-8 max-w-none xl:col-span-2 text-gray-500 dark:text-gray-400">
               <p>
                 I graduated as a computer scientist from the University of Iceland in the summer of
                 2020. I live in Reykjavík.
               </p>
               <br />
               <p>
-                <RoughNotation type="bracket" show={true} color="#FF0000">
+                <RoughNotation
+                  type="bracket"
+                  brackets={['left', 'right']}
+                  show={true}
+                  color="#FF0000"
+                >
                   I'm very dedicated to learn new things and to truly belive that you should never
                   stop learning. I enjoy creating different things, whether that be websites,
                   application or anything in between.
@@ -48,12 +51,21 @@ export default function About() {
                 At my first full-time job as a developer I feel like I've been very lucky to
                 experience a broad and diverce part of projects and tasks. I get to deal with
                 everything from user feedback, design and to backend tests and improving parts of
-                our daily operations.
+                our daily operations. <br />
+                <RoughNotation type="underline" show={true} color="#34D399" animationDelay={1000}>
+                  <Link
+                    href={'/uses'}
+                    className="hover:text-primaryColor dark:hover:text-primaryColorDark"
+                  >
+                    Here{' '}
+                  </Link>
+                </RoughNotation>{' '}
+                you can see what I use on daily basis.
               </p>
               <br />
               <p>
                 Feel free to reach out if you have anything to talk about, you can reach me on{' '}
-                <RoughNotation type="highlight" show={true} color="#FBCFE8">
+                <RoughNotation type="highlight" show={true} color="#FBCFE8" animationDelay={1200}>
                   einargudnig@gmail.com{' '}
                 </RoughNotation>
                 or on social media.
@@ -70,7 +82,7 @@ export default function About() {
           <div className="pt-8 pb-8 max-w-none xl:col-span-2">
             {experienceData.map((d) => (
               <Experience
-                key={d.title}
+                key={d.company}
                 title={d.title}
                 company={d.company}
                 location={d.location}
@@ -83,6 +95,7 @@ export default function About() {
             ))}
           </div>
         </div>
+        <div></div>
       </div>
     </>
   )

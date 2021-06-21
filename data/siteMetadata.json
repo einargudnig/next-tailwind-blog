@@ -1,18 +1,18 @@
 {
-  "title": "Next.js Starter Blog",
+  "title": "My blog",
   "author": "Einar Guðni Guðjónsson",
   "headerTitle": "<Einar />",
   "description": "A place of thoughts, wanderings, reflections & everything in between.",
   "language": "en-us",
   "siteUrl": "https://einargudni.com",
   "siteRepo": "https://github.com/einargudnig/next-tailwind-blog",
-  "image": "/static/images/avatar.png",
+  "image": "/static/images/avatar2.jpg",
   "socialBanner": "/static/images/twitter-card.png",
   "email": "einargudni@gmail.com",
   "github": "https://github.com/einargudnig",
   "twitter": "https://twitter.com/einargudni",
-  "facebook": "https://facebook.com",
-  "youtube": "https://youtube.com",
-  "linkedin": "https://www.linkedin.com",
+  "facebook": "https://www.facebook.com/people/Einar-Gu%C3%B0ni-Gu%C3%B0j%C3%B3nsson/638409843",
+  "instagram": "https://www.instagram.com/einargudni/",
+  "linkedin": "https://www.linkedin.com/einargudni/",
   "locale": "en-US"
 }

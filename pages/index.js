@@ -42,7 +42,7 @@ export default function Home({ posts }) {
               show={true}
               color="#fff176"
               animationDelay={800}
-              animationDuration={1500}
+              animationDuration={1200}
             >
               thoughts,{' '}
             </RoughNotation>
@@ -51,9 +51,9 @@ export default function Home({ posts }) {
               show={true}
               color="#ADD8E6"
               animationDelay={1400}
-              animationDuration={1500}
+              animationDuration={1200}
             >
-              wanderings,{' '}
+              reflections,{' '}
             </RoughNotation>
             &{' '}
             <RoughNotation
@@ -61,7 +61,7 @@ export default function Home({ posts }) {
               show={true}
               color="#FF0000"
               animationDelay={1700}
-              animationDuration={1500}
+              animationDuration={1200}
             >
               everything{' '}
             </RoughNotation>
