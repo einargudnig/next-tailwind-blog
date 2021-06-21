@@ -1,11 +1,8 @@
-import { LIGHT_COLORS } from '@/lib/constants'
-import { useIsFontReady } from '@/lib/useFontReady'
 import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import { RainbowHighlight } from '@/components/ui/rainbow'
 import { RoughNotation } from 'react-rough-notation'
 import { useState } from 'react'
 
@@ -19,10 +16,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  // Before animation, detect if custom fonts are loaded, so <RoughNotation />
-  // SVG's are correctly positioned over the elements
-  const isFontReady = useIsFontReady()
-
   return (
     <>
       <PageSeo

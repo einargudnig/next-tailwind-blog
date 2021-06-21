@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from './Link'
+import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 
 const MobileNav = () => {
@@ -18,7 +19,15 @@ const MobileNav = () => {
   }
 
   return (
-    <div className="sm:hidden">
+    <div className="sm:hidden flex flex-row justify-between">
+      {/* <div>
+        <Link href="/" aria-label="Personal Blog">
+          <div className="flex items-center">
+            <div className="mr-3"> <Logo /> </div>
+            <div className="h-6 text-2xl font-semibold sm:block">{siteMetadata.headerTitle}</div>
+          </div>
+        </Link>
+      </div> */}
       <button
         type="button"
         className="w-8 h-8 ml-1 mr-1 rounded"

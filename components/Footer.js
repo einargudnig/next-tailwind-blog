@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="flex flex-col items-center justify-between md:flex-row mt-10">
         <div className="flex mb-3 space-x-4">
           <SocialIcon kind="github" href={siteMetadata.github} size="5" />
-          <SocialIcon kind="youtube" href={siteMetadata.youtube} size="5" />
+          <SocialIcon kind="instagram" href={siteMetadata.instagram} size="5" />
           <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="5" />
           <SocialIcon kind="twitter" href={siteMetadata.twitter} size="5" />
         </div>
