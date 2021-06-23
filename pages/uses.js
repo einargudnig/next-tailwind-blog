@@ -34,7 +34,7 @@ export default function Uses() {
           </span>
           <figure>
             <embed
-              className="w-2/5 h-2/5"
+              className="w-3/5 h-3/5"
               src="https://wakatime.com/share/@082e14f7-c718-4327-85f4-28e803bdaa80/05162f53-5527-4b7d-979d-c8c3a56814df.svg"
             ></embed>
           </figure>
