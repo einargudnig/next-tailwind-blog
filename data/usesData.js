@@ -5,14 +5,14 @@ export const USES = [
     link: 'https://code.visualstudio.com/',
   },
   {
-    name: 'One Dark Pro',
+    name: 'Night Owl',
     description: 'I regularly change themes in VS Code for fun, this is my current theme.',
-    link: 'https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.one-dark-pro',
+    link: 'https://marketplace.visualstudio.com/items?itemName=sdras.night-owl',
   },
   {
-    name: 'VS Code Icons',
-    description: "I've been using the same Icon pack since I started using VS Code.",
-    link: 'https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons',
+    name: 'Material Theme Icons',
+    description: 'I just selecet the most popular icon theme at some point',
+    link: 'https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme',
   },
   {
     name: 'wsl2',
