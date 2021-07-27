@@ -6,6 +6,7 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import NowPlaying from './NowPlaying'
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -39,6 +40,9 @@ const LayoutWrapper = ({ children }) => {
           </div>
         </header>
         <main className="mb-auto">{children}</main>
+        {/* <div>
+          <NowPlaying />
+        </div> */}
         <Footer />
       </div>
     </SectionContainer>
