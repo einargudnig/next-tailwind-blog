@@ -40,9 +40,7 @@ const LayoutWrapper = ({ children }) => {
           </div>
         </header>
         <main className="mb-auto">{children}</main>
-        <div>
-          <NowPlaying />
-        </div>
+        <NowPlaying />
         <Footer />
       </div>
     </SectionContainer>

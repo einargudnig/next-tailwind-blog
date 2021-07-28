@@ -3,15 +3,14 @@ import { getNowPlaying } from '@/lib/spotify'
 export default async function handler(_, res) {
   const response = await getNowPlaying()
 
+  // Here we handle the request from the API
   if (response.status === 204 || response.status > 400) {
-    console.log('HER? 204')
     return res.status(200).json({ isPlaying: false })
   }
 
   const song = await response.json()
 
   if (song.item === null) {
-    console.log('HER? NULL')
     return res.status(200).json({ isPlaying: false })
   }
 
@@ -24,6 +23,7 @@ export default async function handler(_, res) {
 
   res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30')
 
+  // We return an obejct containing the information about the currently playing song
   return res.status(200).json({
     album,
     albumImageUrl,
